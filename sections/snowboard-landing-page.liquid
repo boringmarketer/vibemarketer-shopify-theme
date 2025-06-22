@@ -1,0 +1,207 @@
+{% comment %}
+  Complete Snowboard Landing Page Section
+  Based on DTC best practices PRD
+{% endcomment %}
+
+{{ 'complete-snowboard-landing.css' | asset_url | stylesheet_tag }}
+
+<div class="complete-snowboard-landing">
+  
+  <!-- Section 1: Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-headline">CARVE YOUR LEGEND</h1>
+        <h2 class="hero-subheadline">The complete snowboard that adapts to every terrain, every style, every rider</h2>
+        <div class="hero-trust-signals">
+          <span class="trust-item">✓ Free shipping & 30-day return guarantee</span>
+          <span class="trust-item">✓ Lifetime warranty included</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#bundle-selector" class="btn btn-primary btn-hero">GET YOUR COMPLETE SETUP</a>
+          <div class="hero-urgency">⚡ Limited time: Season launch special pricing</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="{{ 'snowboard-hero.jpg' | asset_url }}" alt="Complete Snowboard Setup" class="hero-image" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Bundle Selector -->
+  <section class="bundle-section" id="bundle-selector">
+    <div class="container">
+      <h2 class="section-title">CHOOSE YOUR COMPLETE SETUP</h2>
+      
+      <div class="bundle-grid">
+        <!-- Starter Bundle -->
+        <div class="bundle-option">
+          <h3>STARTER</h3>
+          <div class="bundle-price">
+            <span class="original-price">$899</span>
+            <span class="sale-price">$699</span>
+            <span class="savings">Save $200</span>
+          </div>
+          <div class="bundle-includes">
+            <h4>What's Included:</h4>
+            <ul>
+              <li>All-Mountain Snowboard</li>
+              <li>Bindings (Starter Level)</li>
+              <li>Basic Boots</li>
+              <li>Helmet</li>
+              <li>Wrist Guards</li>
+            </ul>
+          </div>
+          <a href="/cart/add?id=STARTER_BUNDLE_ID" class="btn btn-primary btn-bundle">SELECT STARTER</a>
+        </div>
+
+        <!-- Pro Bundle (Featured) -->
+        <div class="bundle-option featured">
+          <div class="bundle-badge">MOST POPULAR</div>
+          <h3>PRO</h3>
+          <div class="bundle-price">
+            <span class="original-price">$1,499</span>
+            <span class="sale-price">$1,199</span>
+            <span class="savings">Save $300</span>
+          </div>
+          <div class="bundle-includes">
+            <h4>What's Included:</h4>
+            <ul>
+              <li>Premium All-Mountain Board</li>
+              <li>Pro-Level Bindings</li>
+              <li>High-Performance Boots</li>
+              <li>Premium Helmet</li>
+              <li>Protective Gear Set</li>
+              <li>Free Waxing Kit</li>
+              <li>Season Pass Discounts</li>
+            </ul>
+          </div>
+          <a href="/cart/add?id=PRO_BUNDLE_ID" class="btn btn-primary btn-bundle">SELECT PRO</a>
+        </div>
+
+        <!-- Elite Bundle -->
+        <div class="bundle-option">
+          <h3>ELITE</h3>
+          <div class="bundle-price">
+            <span class="original-price">$2,299</span>
+            <span class="sale-price">$1,899</span>
+            <span class="savings">Save $400</span>
+          </div>
+          <div class="bundle-includes">
+            <h4>What's Included:</h4>
+            <ul>
+              <li>Elite Carbon Fiber Board</li>
+              <li>Championship Bindings</li>
+              <li>Custom-Fit Boots</li>
+              <li>Smart Tech Helmet</li>
+              <li>Complete Protection Suite</li>
+              <li>Professional Waxing Kit</li>
+              <li>Season Pass + Lessons</li>
+              <li>1-Year Concierge Service</li>
+            </ul>
+          </div>
+          <a href="/cart/add?id=ELITE_BUNDLE_ID" class="btn btn-primary btn-bundle">SELECT ELITE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Final CTA -->
+  <section class="final-cta-section" id="final-cta">
+    <div class="container">
+      <div class="final-cta-content">
+        <h2>DON'T WAIT - SEASON STARTS SOON</h2>
+        <p class="final-cta-subtext">Join thousands of riders who trust our complete snowboard setups</p>
+        
+        <div class="final-cta-features">
+          <div class="feature-item">
+            <span class="feature-icon">🚚</span>
+            <span class="feature-text">Free 2-Day Shipping</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🛡️</span>
+            <span class="feature-text">Lifetime Warranty</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">↩️</span>
+            <span class="feature-text">30-Day Returns</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⭐</span>
+            <span class="feature-text">5-Star Reviews</span>
+          </div>
+        </div>
+
+        <div class="final-cta-urgency">
+          ⏰ Limited Time: Save up to $400 on complete setups
+        </div>
+
+        <a href="#bundle-selector" class="btn btn-final-cta">CHOOSE YOUR SETUP NOW</a>
+        
+        <div class="final-cta-guarantee">
+          <p>30-day money-back guarantee • Free shipping both ways • Expert support included</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Add to cart functionality
+  document.querySelectorAll('.btn-bundle').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Add your Shopify cart functionality here
+      const productId = this.href.split('id=')[1];
+      console.log('Adding to cart:', productId);
+      
+      // Example: Replace with actual Shopify cart add
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: productId,
+          quantity: 1
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Handle success - maybe show a notification or redirect
+        window.location.href = '/cart';
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Snowboard Landing Page",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Snowboard Landing Page Settings"
+    }
+  ]
+}
+{% endschema %} 
