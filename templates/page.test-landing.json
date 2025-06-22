@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "test_hero": {
+      "type": "test-hero-section",
+      "settings": {}
+    }
+  },
+  "order": ["main", "test_hero"]
+}

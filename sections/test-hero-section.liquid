@@ -1,0 +1,77 @@
+{% comment %}
+  Test Hero Section - Created via GitHub Auto-Deploy
+{% endcomment %}
+
+<style>
+  .test-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .test-hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .test-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .test-hero-cta {
+    background: #ff6b6b;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  
+  .test-hero-cta:hover {
+    transform: translateY(-2px);
+    background: #ff5252;
+  }
+</style>
+
+<section class="test-hero">
+  <div class="test-hero-content">
+    <h1>🚀 TEST TEMPLATE SUCCESS!</h1>
+    <p>This template was created and deployed via GitHub auto-deploy</p>
+    <a href="#" class="test-hero-cta">This Template Works! ✅</a>
+    <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+      Template: page.test-landing | Section: test-hero-section
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Test Hero Section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Test Hero Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "Custom Title",
+      "default": "🚀 TEST TEMPLATE SUCCESS!"
+    }
+  ]
+}
+{% endschema %}
