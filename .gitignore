@@ -1,0 +1,37 @@
+# Shopify Theme .gitignore
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Config files (may contain sensitive data)
+config.yml
+.env
+.env.*
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Theme Kit
+.theme-check.yml
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Shopify
+config/settings_data.json.backup
+*.orig
+
+# Development
+*.log
+.sass-cache/ 
