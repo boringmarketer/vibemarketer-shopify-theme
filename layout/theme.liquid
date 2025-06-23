@@ -16,10 +16,10 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
     
-    <!-- Modern Typography -->
+    <!-- Professional Typography - K2 Inspired -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
     <title>
       {{ page_title }}
@@ -224,9 +224,7 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'snowboard-colors.css' | asset_url | stylesheet_tag }}
-    {{ 'modern-ecommerce.css' | asset_url | stylesheet_tag }}
-    {{ 'section-enhancements.css' | asset_url | stylesheet_tag }}
+    {{ 'k2-inspired-design.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
