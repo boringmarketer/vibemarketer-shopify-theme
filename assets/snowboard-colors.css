@@ -1,0 +1,192 @@
+/* Snowboard Store - Light Outdoor Color Scheme */
+/* Integrates with Dawn theme's existing CSS variables */
+
+:root {
+  /* Light outdoor color palette */
+  --snow-white: #fafafa;
+  --ice-blue: #e8f4f8;
+  --mountain-mist: #d1e7dd;
+  --alpine-green: #20c997;
+  --forest-deep: #198754;
+  --slate-stone: #6c757d;
+  --charcoal-dark: #212529;
+  --sunset-orange: #fd7e14;
+  --powder-blue: #0dcaf0;
+}
+
+/* Override Dawn theme colors with outdoor palette */
+.color-scheme-1,
+.color-scheme-background-1 {
+  --color-background: var(--snow-white);
+  --color-foreground: var(--charcoal-dark);
+  --color-base-text: var(--charcoal-dark);
+  --color-base-background-1: var(--snow-white);
+  --color-base-background-2: var(--ice-blue);
+}
+
+.color-scheme-accent-1 {
+  --color-background: var(--mountain-mist);
+  --color-foreground: var(--forest-deep);
+  --color-base-text: var(--forest-deep);
+}
+
+.color-scheme-accent-2 {
+  --color-background: var(--ice-blue);
+  --color-foreground: var(--charcoal-dark);
+}
+
+/* Button styling with outdoor theme */
+.btn,
+.button,
+[class*="button"] {
+  background-color: var(--alpine-green);
+  color: white;
+  border: 2px solid var(--alpine-green);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover,
+.button:hover,
+[class*="button"]:hover {
+  background-color: var(--forest-deep);
+  border-color: var(--forest-deep);
+  transform: translateY(-1px);
+}
+
+.btn--secondary,
+.button--secondary {
+  background-color: transparent;
+  color: var(--alpine-green);
+  border-color: var(--alpine-green);
+}
+
+.btn--secondary:hover,
+.button--secondary:hover {
+  background-color: var(--alpine-green);
+  color: white;
+}
+
+/* Header/navigation styling */
+.header,
+.site-header {
+  background-color: var(--snow-white);
+  border-bottom: 1px solid var(--ice-blue);
+}
+
+.header__heading-link,
+.site-nav__link {
+  color: var(--charcoal-dark);
+}
+
+.site-nav__link:hover {
+  color: var(--alpine-green);
+}
+
+/* Hero section enhancements */
+.image-banner {
+  position: relative;
+}
+
+.image-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(32, 201, 151, 0.1) 0%, rgba(25, 135, 84, 0.2) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image-banner .banner__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Card and product styling */
+.card,
+.product-card {
+  background-color: var(--snow-white);
+  border: 1px solid var(--ice-blue);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(32, 201, 151, 0.15);
+  border-color: var(--alpine-green);
+}
+
+/* Collection and section backgrounds */
+.section {
+  background-color: var(--snow-white);
+}
+
+.section:nth-child(even) {
+  background-color: var(--ice-blue);
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--charcoal-dark);
+}
+
+.heading--accent {
+  color: var(--alpine-green);
+}
+
+/* Price styling */
+.price,
+.price__current,
+.price-item {
+  color: var(--forest-deep);
+  font-weight: 600;
+}
+
+.price__sale,
+.price--on-sale {
+  color: var(--sunset-orange);
+}
+
+/* Badge styling */
+.badge,
+.product-badge {
+  background-color: var(--alpine-green);
+  color: white;
+  border-radius: 4px;
+}
+
+.badge--sale {
+  background-color: var(--sunset-orange);
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--charcoal-dark);
+  color: var(--snow-white);
+}
+
+.footer__heading {
+  color: var(--alpine-green);
+}
+
+.footer a {
+  color: var(--ice-blue);
+}
+
+.footer a:hover {
+  color: var(--alpine-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-banner::before {
+    background: linear-gradient(135deg, rgba(32, 201, 151, 0.15) 0%, rgba(25, 135, 84, 0.25) 100%);
+  }
+}
