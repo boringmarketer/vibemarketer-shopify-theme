@@ -1,0 +1,603 @@
+{% comment %}
+  Snowboard Store Homepage - Clean & Elevated Design
+  Optimized for snowboard ecommerce with mobile-first approach
+{% endcomment %}
+
+<div class="bg-white">
+  <!-- Mobile menu (off-canvas) -->
+  <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true" id="mobile-menu" style="display: none;">
+    <div class="fixed inset-0 bg-black/25" aria-hidden="true"></div>
+    <div class="fixed inset-0 z-40 flex">
+      <div class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+        <div class="flex px-4 pt-5 pb-2">
+          <button type="button" class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400" onclick="closeMobileMenu()">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Close menu</span>
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Links -->
+        <div class="mt-2">
+          <div class="border-b border-gray-200">
+            <div class="-mb-px flex space-x-8 px-4" aria-orientation="horizontal" role="tablist">
+              <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900">Men's Boards</button>
+              <button class="flex-1 border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900">Women's Boards</button>
+            </div>
+          </div>
+
+          <!-- Mobile Categories -->
+          <div class="space-y-12 px-4 py-6">
+            <div class="grid grid-cols-2 gap-x-4 gap-y-10">
+              <div class="group relative">
+                <img src="{{ 'snowboard-allmountain.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-6cf47ac2fb6d?w=400' }}" alt="All-Mountain Snowboards" class="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75" />
+                <a href="/collections/all-mountain" class="mt-6 block text-sm font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  All-Mountain
+                </a>
+                <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+              </div>
+              <div class="group relative">
+                <img src="{{ 'snowboard-freestyle.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-5d31b6ad6e92?w=400' }}" alt="Freestyle Snowboards" class="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75" />
+                <a href="/collections/freestyle" class="mt-6 block text-sm font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  Freestyle
+                </a>
+                <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+              </div>
+              <div class="group relative">
+                <img src="{{ 'snowboard-freeride.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-7ad57fac74e2?w=400' }}" alt="Freeride Snowboards" class="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75" />
+                <a href="/collections/freeride" class="mt-6 block text-sm font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  Freeride
+                </a>
+                <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+              </div>
+              <div class="group relative">
+                <img src="{{ 'snowboard-boots.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400' }}" alt="Snowboard Boots" class="aspect-square w-full rounded-md bg-gray-100 object-cover group-hover:opacity-75" />
+                <a href="/collections/boots" class="mt-6 block text-sm font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  Boots & Gear
+                </a>
+                <p aria-hidden="true" class="mt-1 text-sm text-gray-500">Shop now</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+          <div class="flow-root">
+            <a href="/pages/about" class="-m-2 block p-2 font-medium text-gray-900">About</a>
+          </div>
+          <div class="flow-root">
+            <a href="/pages/contact" class="-m-2 block p-2 font-medium text-gray-900">Contact</a>
+          </div>
+        </div>
+
+        <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+          <div class="flow-root">
+            <a href="/account/register" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
+          </div>
+          <div class="flow-root">
+            <a href="/account/login" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="relative bg-gray-900">
+    <!-- Hero Background Image -->
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+      <img src="{{ section.settings.hero_image | img_url: '2048x' | default: 'https://images.unsplash.com/photo-1551524164-6cf47ac2fb6d?w=2048' }}" alt="{{ section.settings.hero_image.alt | default: 'Snowboarder on mountain' }}" class="size-full object-cover" />
+    </div>
+    <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50"></div>
+
+    <!-- Navigation -->
+    <header class="relative z-10">
+      <nav aria-label="Top">
+        <!-- Top Navigation Bar -->
+        <div class="bg-gray-900">
+          <div class="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <!-- Currency/Region Selector -->
+            <form>
+              <div class="-ml-2 inline-grid grid-cols-1">
+                <select id="desktop-currency" name="currency" aria-label="Currency" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-900 py-0.5 pr-7 pl-2 text-left text-base font-medium text-white focus:outline-2 focus:-outline-offset-1 focus:outline-white sm:text-sm/6">
+                  <option>USD</option>
+                  <option>CAD</option>
+                  <option>EUR</option>
+                  <option>GBP</option>
+                </select>
+                <svg class="pointer-events-none col-start-1 row-start-1 mr-1 size-5 self-center justify-self-end fill-gray-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </form>
+
+            <!-- Account Links -->
+            <div class="flex items-center space-x-6">
+              <a href="/account/login" class="text-sm font-medium text-white hover:text-gray-100">Sign in</a>
+              <a href="/account/register" class="text-sm font-medium text-white hover:text-gray-100">Create account</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="bg-white/10 backdrop-blur-md backdrop-filter">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+              <!-- Logo (Desktop) -->
+              <div class="hidden lg:flex lg:flex-1 lg:items-center">
+                <a href="/">
+                  <span class="sr-only">{{ shop.name }}</span>
+                  {% if section.settings.logo %}
+                    <img class="h-8 w-auto" src="{{ section.settings.logo | img_url: '160x' }}" alt="{{ shop.name }}" />
+                  {% else %}
+                    <span class="text-2xl font-bold text-white">❄️ {{ shop.name }}</span>
+                  {% endif %}
+                </a>
+              </div>
+
+              <!-- Desktop Navigation Menu -->
+              <div class="hidden h-full lg:flex">
+                <div class="inset-x-0 bottom-0 px-4">
+                  <div class="flex h-full justify-center space-x-8">
+                    <div class="flex">
+                      <button type="button" class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out">
+                        Men's Boards
+                        <span class="absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    
+                    <div class="flex">
+                      <button type="button" class="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out">
+                        Women's Boards  
+                        <span class="absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out" aria-hidden="true"></span>
+                      </button>
+                    </div>
+
+                    <a href="/collections/boots" class="flex items-center text-sm font-medium text-white">Boots & Bindings</a>
+                    <a href="/collections/gear" class="flex items-center text-sm font-medium text-white">Gear</a>
+                    <a href="/pages/about" class="flex items-center text-sm font-medium text-white">About</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Controls -->
+              <div class="flex flex-1 items-center lg:hidden">
+                <button type="button" class="-ml-2 p-2 text-white" onclick="openMobileMenu()">
+                  <span class="sr-only">Open menu</span>
+                  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </button>
+
+                <a href="/search" class="ml-2 p-2 text-white">
+                  <span class="sr-only">Search</span>
+                  <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Logo (Mobile) -->
+              <a href="/" class="lg:hidden">
+                <span class="sr-only">{{ shop.name }}</span>
+                {% if section.settings.logo %}
+                  <img src="{{ section.settings.logo | img_url: '128x' }}" alt="{{ shop.name }}" class="h-8 w-auto" />
+                {% else %}
+                  <span class="text-xl font-bold text-white">❄️</span>
+                {% endif %}
+              </a>
+
+              <!-- Cart & Search (Desktop) -->
+              <div class="flex flex-1 items-center justify-end">
+                <a href="/search" class="hidden text-sm font-medium text-white lg:block">Search</a>
+
+                <div class="flex items-center lg:ml-8">
+                  <a href="/pages/help" class="hidden text-sm font-medium text-white lg:block">Help</a>
+
+                  <!-- Cart -->
+                  <div class="ml-4 flow-root lg:ml-8">
+                    <a href="/cart" class="group -m-2 flex items-center p-2">
+                      <svg class="size-6 shrink-0 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                      </svg>
+                      <span class="ml-2 text-sm font-medium text-white" id="cart-count">{{ cart.item_count }}</span>
+                      <span class="sr-only">items in cart, view bag</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Content -->
+    <div class="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
+      <h1 class="text-4xl font-bold tracking-tight text-white lg:text-6xl">
+        {{ section.settings.hero_title | default: "Carve Your Legend" }}
+      </h1>
+      <p class="mt-4 text-xl text-white">
+        {{ section.settings.hero_subtitle | default: "Premium snowboards engineered for every mountain, every style, every rider. From powder days to park sessions." }}
+      </p>
+      <a href="{{ section.settings.hero_button_link | default: '/collections/all' }}" class="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100">
+        {{ section.settings.hero_button_text | default: "Shop Snowboards" }}
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Categories Section -->
+    <section aria-labelledby="category-heading" class="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
+      <div class="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0">
+        <h2 id="category-heading" class="text-2xl font-bold tracking-tight text-gray-900">Shop by Riding Style</h2>
+        <a href="/collections" class="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+          Browse all categories
+          <span aria-hidden="true"> &rarr;</span>
+        </a>
+      </div>
+
+      <div class="mt-4 flow-root">
+        <div class="-my-2">
+          <div class="relative box-content h-80 overflow-x-auto py-2 xl:overflow-visible">
+            <div class="absolute flex space-x-8 px-4 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-5 xl:gap-x-8 xl:space-x-0 xl:px-0">
+              <a href="/collections/all-mountain" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
+                <span aria-hidden="true" class="absolute inset-0">
+                  <img src="{{ 'category-allmountain.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-6cf47ac2fb6d?w=600' }}" alt="All-Mountain Snowboards" class="size-full object-cover" />
+                </span>
+                <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                <span class="relative mt-auto text-center text-xl font-bold text-white">All-Mountain</span>
+              </a>
+              <a href="/collections/freestyle" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
+                <span aria-hidden="true" class="absolute inset-0">
+                  <img src="{{ 'category-freestyle.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-5d31b6ad6e92?w=600' }}" alt="Freestyle Snowboards" class="size-full object-cover" />
+                </span>
+                <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                <span class="relative mt-auto text-center text-xl font-bold text-white">Freestyle</span>
+              </a>
+              <a href="/collections/freeride" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
+                <span aria-hidden="true" class="absolute inset-0">
+                  <img src="{{ 'category-freeride.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-7ad57fac74e2?w=600' }}" alt="Freeride Snowboards" class="size-full object-cover" />
+                </span>
+                <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                <span class="relative mt-auto text-center text-xl font-bold text-white">Freeride</span>
+              </a>
+              <a href="/collections/boots" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
+                <span aria-hidden="true" class="absolute inset-0">
+                  <img src="{{ 'category-boots.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600' }}" alt="Snowboard Boots" class="size-full object-cover" />
+                </span>
+                <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"></span>
+                <span class="relative mt-auto text-center text-xl font-bold text-white">Boots & Gear</span>
+              </a>
+              <a href="/collections/sale" class="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 xl:w-auto">
+                <span aria-hidden="true" class="absolute inset-0">
+                  <img src="{{ 'category-sale.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-5cc69cd2e78e?w=600' }}" alt="Sale Snowboards" class="size-full object-cover" />
+                </span>
+                <span aria-hidden="true" class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-red-600 opacity-50"></span>
+                <span class="relative mt-auto text-center text-xl font-bold text-white">Sale</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 px-4 sm:hidden">
+        <a href="/collections" class="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+          Browse all categories
+          <span aria-hidden="true"> &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section aria-labelledby="featured-heading" class="mx-auto max-w-7xl px-4 pt-24 sm:px-6 sm:pt-32 lg:px-8">
+      <div class="relative overflow-hidden rounded-lg">
+        <div class="absolute inset-0">
+          <img src="{{ section.settings.featured_image | img_url: '1600x' | default: 'https://images.unsplash.com/photo-1551524164-5cc69cd2e78e?w=1600' }}" alt="{{ section.settings.featured_image.alt | default: 'Snowboard setup' }}" class="size-full object-cover" />
+        </div>
+        <div class="relative bg-gray-900/75 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
+          <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+            <h2 id="featured-heading" class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              {{ section.settings.featured_title | default: "Complete Your Setup" }}
+            </h2>
+            <p class="mt-3 text-xl text-white">
+              {{ section.settings.featured_subtitle | default: "From board to boots, bindings to gear. Everything you need for an epic season on the mountain. Professional-grade equipment trusted by riders worldwide." }}
+            </p>
+            <a href="{{ section.settings.featured_button_link | default: '/collections/bundles' }}" class="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">
+              {{ section.settings.featured_button_text | default: "Shop Complete Setups" }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section aria-labelledby="collection-heading" class="mx-auto max-w-xl px-4 pt-24 sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">
+      <h2 id="collection-heading" class="text-2xl font-bold tracking-tight text-gray-900">Featured Collections</h2>
+      <p class="mt-4 text-base text-gray-500">Curated boards for every rider, from beginner-friendly all-mountain to expert-level backcountry.</p>
+
+      <div class="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-8">
+        <a href="/collections/pro-series" class="group block">
+          <img src="{{ 'collection-pro.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-6cf47ac2fb6d?w=600' }}" alt="Pro Series Snowboards" class="aspect-3/2 w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-5/6" />
+          <h3 class="mt-4 text-base font-semibold text-gray-900">Pro Series Collection</h3>
+          <p class="mt-2 text-sm text-gray-500">Competition-grade boards designed with input from professional riders.</p>
+        </a>
+        <a href="/collections/beginner" class="group block">
+          <img src="{{ 'collection-beginner.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-5d31b6ad6e92?w=600' }}" alt="Beginner Snowboards" class="aspect-3/2 w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-5/6" />
+          <h3 class="mt-4 text-base font-semibold text-gray-900">Beginner Collection</h3>
+          <p class="mt-2 text-sm text-gray-500">Forgiving, stable boards perfect for learning and building confidence.</p>
+        </a>
+        <a href="/collections/womens" class="group block">
+          <img src="{{ 'collection-womens.jpg' | asset_url | default: 'https://images.unsplash.com/photo-1551524164-7ad57fac74e2?w=600' }}" alt="Women's Snowboards" class="aspect-3/2 w-full rounded-lg object-cover group-hover:opacity-75 lg:aspect-5/6" />
+          <h3 class="mt-4 text-base font-semibold text-gray-900">Women's Collection</h3>
+          <p class="mt-2 text-sm text-gray-500">Boards specifically designed for women riders, with optimized flex and geometry.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section aria-labelledby="cta-heading" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+      <div class="relative overflow-hidden rounded-lg">
+        <div class="absolute inset-0">
+          <img src="{{ section.settings.cta_image | img_url: '1600x' | default: 'https://images.unsplash.com/photo-1551524164-5cc69cd2e78e?w=1600' }}" alt="{{ section.settings.cta_image.alt | default: 'Snowboard in powder' }}" class="size-full object-cover" />
+        </div>
+        <div class="relative bg-gray-900/75 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
+          <div class="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+            <h2 id="cta-heading" class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              {{ section.settings.cta_title | default: "Ready to Ride?" }}
+            </h2>
+            <p class="mt-3 text-xl text-white">
+              {{ section.settings.cta_subtitle | default: "Join thousands of riders who trust our boards. Free shipping, expert advice, and a 30-day satisfaction guarantee on every order." }}
+            </p>
+            <a href="{{ section.settings.cta_button_link | default: '/collections/all' }}" class="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">
+              {{ section.settings.cta_button_text | default: "Start Shopping" }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer aria-labelledby="footer-heading" class="bg-gray-900">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+          <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+            <div>
+              <h3 class="text-sm font-medium text-white">Shop</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="/collections/all-mountain" class="text-gray-300 hover:text-white">All-Mountain</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/collections/freestyle" class="text-gray-300 hover:text-white">Freestyle</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/collections/freeride" class="text-gray-300 hover:text-white">Freeride</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/collections/boots" class="text-gray-300 hover:text-white">Boots & Bindings</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/collections/gear" class="text-gray-300 hover:text-white">Gear & Accessories</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Company</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="/pages/about" class="text-gray-300 hover:text-white">About Us</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/pages/sustainability" class="text-gray-300 hover:text-white">Sustainability</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/pages/press" class="text-gray-300 hover:text-white">Press</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/pages/careers" class="text-gray-300 hover:text-white">Careers</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/policies/terms-of-service" class="text-gray-300 hover:text-white">Terms &amp; Conditions</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/policies/privacy-policy" class="text-gray-300 hover:text-white">Privacy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+            <div>
+              <h3 class="text-sm font-medium text-white">Account</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="/account" class="text-gray-300 hover:text-white">Manage Account</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/policies/refund-policy" class="text-gray-300 hover:text-white">Returns &amp; Exchanges</a>
+                </li>
+                <li class="text-sm">
+                  <a href="/pages/size-guide" class="text-gray-300 hover:text-white">Size Guide</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-white">Connect</h3>
+              <ul role="list" class="mt-6 space-y-6">
+                <li class="text-sm">
+                  <a href="/pages/contact" class="text-gray-300 hover:text-white">Contact Us</a>
+                </li>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+                </li>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-300 hover:text-white">YouTube</a>
+                </li>
+                <li class="text-sm">
+                  <a href="#" class="text-gray-300 hover:text-white">TikTok</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 md:mt-16 xl:mt-0">
+          <h3 class="text-sm font-medium text-white">Stay Connected</h3>
+          <p class="mt-6 text-sm text-gray-300">Get the latest gear updates, snow reports, and exclusive deals delivered to your inbox.</p>
+          <form class="mt-2 flex sm:max-w-md" action="/contact#contact_form" method="post" accept-charset="UTF-8">
+            <input type="hidden" name="form_type" value="customer">
+            <input type="hidden" name="utf8" value="✓">
+            <input id="email-address" name="contact[email]" type="email" autocomplete="email" required aria-label="Email address" class="block w-full rounded-md bg-white px-4 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-white" placeholder="Enter your email" />
+            <div class="ml-4 shrink-0">
+              <button type="submit" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-xs hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-hidden">Sign up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 py-10">
+        <p class="text-sm text-gray-400">Copyright &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function openMobileMenu() {
+    document.getElementById('mobile-menu').style.display = 'block';
+  }
+  
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').style.display = 'none';
+  }
+  
+  // Update cart count dynamically
+  function updateCartCount() {
+    fetch('/cart.js')
+      .then(response => response.json())
+      .then(cart => {
+        document.getElementById('cart-count').textContent = cart.item_count;
+      });
+  }
+  
+  // Call on page load
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
+
+{% schema %}
+{
+  "name": "Snowboard Homepage",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Carve Your Legend"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Premium snowboards engineered for every mountain, every style, every rider. From powder days to park sessions."
+    },
+    {
+      "type": "text",
+      "id": "hero_button_text",
+      "label": "Hero Button Text",
+      "default": "Shop Snowboards"
+    },
+    {
+      "type": "url",
+      "id": "hero_button_link",
+      "label": "Hero Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Featured Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "Featured Background Image"
+    },
+    {
+      "type": "text",
+      "id": "featured_title",
+      "label": "Featured Title",
+      "default": "Complete Your Setup"
+    },
+    {
+      "type": "textarea",
+      "id": "featured_subtitle",
+      "label": "Featured Subtitle",
+      "default": "From board to boots, bindings to gear. Everything you need for an epic season on the mountain."
+    },
+    {
+      "type": "text",
+      "id": "featured_button_text",
+      "label": "Featured Button Text",
+      "default": "Shop Complete Setups"
+    },
+    {
+      "type": "url",
+      "id": "featured_button_link",
+      "label": "Featured Button Link"
+    },
+    {
+      "type": "header",
+      "content": "CTA Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "cta_image",
+      "label": "CTA Background Image"
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Ready to Ride?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_subtitle",
+      "label": "CTA Subtitle",
+      "default": "Join thousands of riders who trust our boards. Free shipping, expert advice, and a 30-day satisfaction guarantee."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Start Shopping"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA Button Link"
+    }
+  ]
+}
+{% endschema %}

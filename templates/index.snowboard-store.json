@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "snowboard_homepage": {
+      "type": "snowboard-homepage",
+      "settings": {
+        "hero_title": "Carve Your Legend",
+        "hero_subtitle": "Premium snowboards engineered for every mountain, every style, every rider. From powder days to park sessions.",
+        "hero_button_text": "Shop Snowboards",
+        "hero_button_link": "/collections/all",
+        "featured_title": "Complete Your Setup",
+        "featured_subtitle": "From board to boots, bindings to gear. Everything you need for an epic season on the mountain. Professional-grade equipment trusted by riders worldwide.",
+        "featured_button_text": "Shop Complete Setups", 
+        "featured_button_link": "/collections/bundles",
+        "cta_title": "Ready to Ride?",
+        "cta_subtitle": "Join thousands of riders who trust our boards. Free shipping, expert advice, and a 30-day satisfaction guarantee on every order.",
+        "cta_button_text": "Start Shopping",
+        "cta_button_link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "snowboard_homepage"
+  ]
+}
