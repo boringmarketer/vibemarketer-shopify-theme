@@ -1,51 +1,55 @@
 {
   "sections": {
-    "6a3bb789-ce10-45f5-ae67-e2063ef8c76b": {
+    "hero-section": {
       "type": "image-banner",
       "blocks": {
-        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0": {
+        "hero-heading": {
           "type": "heading",
           "settings": {
-            "heading": "Carve Your Legend",
+            "heading": "AI-Powered Marketing Intelligence",
             "heading_size": "h1"
           }
         },
-        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1": {
+        "hero-text": {
           "type": "text",
           "settings": {
-            "text": "Premium snowboards engineered for every mountain, every style, every rider. From powder days to park sessions.",
+            "text": "Join 2,000+ marketers using AI to discover growth opportunities, create viral content, and scale their brands with data-driven insights.",
             "text_style": "body"
           }
         },
-        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2": {
+        "hero-buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Snowboards",
+            "button_label_1": "Start Free Trial",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
-            "button_label_2": "View Gear",
-            "button_link_2": "shopify://collections/gear",
+            "button_label_2": "View Demo",
+            "button_link_2": "shopify://pages/demo",
             "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0",
-        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1",
-        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2"
+        "hero-heading",
+        "hero-text",
+        "hero-buttons"
       ],
       "custom_css": [
-        ".image-banner { min-height: 80vh; position: relative; overflow: hidden; }",
-        ".image-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%); z-index: 2; }",
-        ".banner__content { position: relative; z-index: 3; text-align: center; max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }",
-        ".banner__heading { font-family: 'Roboto Condensed', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.7); margin-bottom: 1.5rem; letter-spacing: -0.02em; }",
-        ".banner__text { font-size: clamp(1.125rem, 2.5vw, 1.5rem); color: rgba(255,255,255,0.95); margin-bottom: 3rem; line-height: 1.4; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }",
-        ".banner__buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }",
-        ".banner__buttons .button { padding: 1.5rem 3rem; font-family: 'Roboto Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; min-height: 60px; border-radius: 3px; transition: all 0.25s ease-out; }"
+        ".image-banner { min-height: 90vh; position: relative; overflow: hidden; background: var(--gradient-light); }",
+        ".image-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%); z-index: 1; }",
+        ".banner__content { position: relative; z-index: 2; text-align: center; max-width: 900px; margin: 0 auto; padding: var(--space-8); }",
+        ".banner__heading { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--color-gray-900); margin-bottom: var(--space-6); }",
+        ".banner__text { font-size: clamp(1.125rem, 1.5vw, 1.25rem); line-height: 1.7; color: var(--color-gray-600); margin-bottom: var(--space-8); max-width: 600px; margin-left: auto; margin-right: auto; }",
+        ".banner__buttons { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }",
+        ".banner__buttons .button { font-family: var(--font-primary); font-weight: 500; border-radius: var(--radius-md); transition: var(--transition-fast); min-height: 52px; padding: var(--space-4) var(--space-8); }",
+        ".banner__buttons .button--primary { background: var(--gradient-primary); border: none; }",
+        ".banner__buttons .button--primary:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }",
+        ".banner__buttons .button--secondary { background: var(--color-white); color: var(--color-gray-800); border: 2px solid var(--color-gray-300); }",
+        ".banner__buttons .button--secondary:hover { background: var(--color-gray-50); border-color: var(--color-gray-400); }",
+        "@media (max-width: 768px) { .banner__buttons { flex-direction: column; align-items: center; } .banner__buttons .button { width: 100%; max-width: 280px; } }"
       ],
       "settings": {
-        "image": "shopify://shop_images/theme_cover_image.jpg",
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
