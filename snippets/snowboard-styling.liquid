@@ -1,0 +1,151 @@
+{% comment %}
+  Snowboard Theme Styling Helper
+  Use this snippet to apply snowboard-specific CSS classes and styling
+{% endcomment %}
+
+{% assign button_class = 'btn-snowboard-primary' %}
+{% assign secondary_button_class = 'btn-snowboard-secondary' %}
+
+{% comment %}
+  Apply snowboard classes based on section type
+{% endcomment %}
+
+{% case section.type %}
+  {% when 'slideshow' %}
+    <style>
+      .slideshow h2 { 
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 900 !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: -0.02em;
+      }
+      .slideshow .slide__content {
+        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    </style>
+
+  {% when 'collection-list' %}
+    <style>
+      .collection-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        transition: all 0.4s ease;
+      }
+      .collection-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+      }
+    </style>
+
+  {% when 'featured-collection' %}
+    <style>
+      .product-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+
+  {% when 'countdown-timer' %}
+    <style>
+      .countdown-timer {
+        background: linear-gradient(135deg, #1a365d 0%, #2d4a63 50%, #4a6fa5 100%);
+        color: white;
+      }
+      .countdown-timer h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+
+  {% when 'auto-scrolling-text' %}
+    <style>
+      .scrolling-text {
+        background: #1a365d;
+        color: white;
+      }
+      .scrolling-text__item {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+
+  {% when 'customer-reviews' %}
+    <style>
+      .reviews-snowboard {
+        background: #f1f5f9;
+      }
+      .review-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid #ff6b35;
+      }
+      .review-card__title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: #1a365d;
+      }
+    </style>
+{% endcase %}
+
+{% comment %}
+  Global snowboard button styling
+{% endcomment %}
+<style>
+  .button--primary,
+  .btn:not(.btn--secondary) {
+    background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .button--primary:hover,
+  .btn:not(.btn--secondary):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    background: #ff8c5a;
+  }
+  
+  .button--secondary,
+  .btn--secondary {
+    background: transparent;
+    color: #1a365d;
+    border: 2px solid #1a365d;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .button--secondary:hover,
+  .btn--secondary:hover {
+    background: #1a365d;
+    color: white;
+    transform: translateY(-1px);
+  }
+</style>

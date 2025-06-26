@@ -1,176 +1,425 @@
 {
   "sections": {
-    "hero-section": {
-      "type": "image-banner",
+    "hero_slideshow": {
+      "type": "slideshow",
       "blocks": {
-        "hero-heading": {
-          "type": "heading",
+        "powder_slide": {
+          "type": "slide",
           "settings": {
-            "heading": "Carve Your Legend",
-            "heading_size": "h1"
+            "image_overlay_opacity": 30,
+            "subheading": "CARVE YOUR LEGEND",
+            "heading": "UNLEASH YOUR MOUNTAIN SOUL",
+            "description": "<p>Premium snowboards engineered for riders who demand perfection on every run. From powder to park, backcountry to groomers.</p>",
+            "heading_size": 48,
+            "button_label": "SHOP BOARDS",
+            "link": "/collections/snowboards",
+            "button_style": "primary",
+            "button_label_second": "WATCH VIDEO",
+            "link_second": "#video-section",
+            "button_style_second": "secondary",
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "background_opacity": 85,
+            "color_scheme": "secondary",
+            "content_width": 60,
+            "text_alignment": "left",
+            "content_color": "#ffffff",
+            "text_alignment_mobile": "center",
+            "heading_size_mobile": 36
           }
         },
-        "hero-text": {
-          "type": "text",
+        "gear_slide": {
+          "type": "slide",
           "settings": {
-            "text": "Premium snowboards engineered for every mountain, every style, every rider. From powder days to park sessions - discover boards that perform as beautifully as they look.",
-            "text_style": "body"
-          }
-        },
-        "hero-buttons": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Snowboards",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "View Gear",
-            "button_link_2": "shopify://collections/gear",
-            "button_style_secondary_2": true
+            "image_overlay_opacity": 40,
+            "subheading": "COMPLETE SETUP",
+            "heading": "GEAR THAT PERFORMS",
+            "description": "<p>Everything you need for epic days on the mountain. Boards, boots, bindings, and gear from the brands riders trust.</p>",
+            "heading_size": 48,
+            "button_label": "SHOP GEAR",
+            "link": "/collections/all",
+            "button_style": "primary",
+            "button_label_second": "SIZE GUIDE",
+            "link_second": "/pages/size-guide",
+            "button_style_second": "secondary",
+            "box_align": "middle-right",
+            "show_text_box": true,
+            "background_opacity": 85,
+            "color_scheme": "secondary",
+            "content_width": 60,
+            "text_alignment": "left",
+            "content_color": "#ffffff",
+            "text_alignment_mobile": "center",
+            "heading_size_mobile": 36
           }
         }
       },
       "block_order": [
-        "hero-heading",
-        "hero-text",
-        "hero-buttons"
-      ],
-      "custom_css": [
-        ".image-banner { min-height: 90vh; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); display: flex; align-items: center; }",
-        ".image-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%); z-index: 1; }",
-        ".banner__content { position: relative; z-index: 2; text-align: center; max-width: 1000px; margin: 0 auto; padding: var(--space-8); }",
-        ".banner__heading { font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: var(--color-gray-900); margin-bottom: var(--space-6); background: linear-gradient(135deg, #1e293b 0%, #475569 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }",
-        ".banner__text { font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.6; color: var(--color-gray-600); margin-bottom: var(--space-10); max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 400; }",
-        ".banner__buttons { display: flex; gap: var(--space-6); justify-content: center; flex-wrap: wrap; }",
-        ".banner__buttons .button { font-family: var(--font-primary); font-weight: 600; border-radius: var(--radius-xl); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); min-height: 60px; padding: var(--space-5) var(--space-10); font-size: 1.125rem; text-transform: none; }",
-        ".banner__buttons .button--primary { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%); border: none; color: white; box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4); }",
-        ".banner__buttons .button--primary:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.5); }",
-        ".banner__buttons .button--secondary { background: var(--color-white); color: var(--color-gray-800); border: 2px solid var(--color-gray-300); box-shadow: var(--shadow-sm); }",
-        ".banner__buttons .button--secondary:hover { background: var(--color-gray-50); border-color: var(--color-gray-400); transform: translateY(-1px); box-shadow: var(--shadow-md); }",
-        "@media (max-width: 768px) { .banner__buttons { flex-direction: column; align-items: center; gap: var(--space-4); } .banner__buttons .button { width: 100%; max-width: 300px; } }"
+        "powder_slide",
+        "gear_slide"
       ],
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
+        "full_width": true,
+        "transparent_header": true,
+        "slide_height": "large",
+        "auto_rotate": true,
+        "change_slides_speed": 6,
+        "slide_height_mobile": "medium",
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "<strong>Featured Snowboards</strong>",
-        "heading_size": "h2",
-        "description": "Discover our top-rated boards, trusted by riders worldwide",
-        "show_description": true,
-        "description_style": "body",
-        "collection": "automated-collection",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "portrait",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "f1552b18-6017-4231-810d-74e61da22c37": {
-      "type": "image-with-text",
+    "season_countdown": {
+      "type": "countdown-timer",
       "blocks": {
-        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-0": {
-          "type": "heading",
+        "content": {
+          "type": "content",
           "settings": {
-            "heading": "Complete Your Setup",
+            "heading": "Season Opens Soon",
+            "text": "<p>Get ready for first tracks. Limited time pre-season deals on complete setups.</p>",
             "heading_size": "h2"
           }
         },
-        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1": {
-          "type": "text",
+        "timer": {
+          "type": "timer",
           "settings": {
-            "text": "<p>From board to boots, bindings to gear. Everything you need for an epic season on the mountain. Professional-grade equipment trusted by riders worldwide.</p>",
-            "text_style": "body"
+            "enable_timer": true,
+            "year": "2025",
+            "month": "12",
+            "day": "1",
+            "hour": "06",
+            "minute": "00",
+            "hide_timer": false,
+            "text": "UNTIL FIRST SNOW"
           }
         },
-        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2": {
+        "button": {
           "type": "button",
           "settings": {
-            "button_label": "Shop Complete Setups",
-            "button_link": "shopify://collections/bundles"
+            "button": "PRE-ORDER NOW",
+            "button_link": "/collections/pre-order",
+            "button_style": "primary"
           }
         }
       },
       "block_order": [
-        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-0",
-        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1",
-        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2"
+        "content",
+        "timer",
+        "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/theme_cover_image.jpg",
-        "height": "large",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "overlap",
-        "color_scheme": "accent-1",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "full_width": true,
+        "reduce_margins": true,
+        "color_scheme": "primary"
       }
     },
-    "38cdf60f-e431-43b5-aac3-7e6215447d67": {
+    "shop_categories": {
       "type": "collection-list",
       "blocks": {
-        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0": {
+        "snowboards": {
           "type": "featured_collection",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "snowboards",
+            "custom_title": "Snowboards",
+            "custom_link": "/collections/snowboards"
           }
         },
-        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1": {
+        "boots": {
           "type": "featured_collection",
           "settings": {
-            "collection": "automated-collection"
+            "collection": "boots",
+            "custom_title": "Boots",
+            "custom_link": "/collections/boots"
+          }
+        },
+        "bindings": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bindings",
+            "custom_title": "Bindings",
+            "custom_link": "/collections/bindings"
+          }
+        },
+        "apparel": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "apparel",
+            "custom_title": "Outerwear",
+            "custom_link": "/collections/apparel"
           }
         }
       },
       "block_order": [
-        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0",
-        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1"
+        "snowboards",
+        "boots", 
+        "bindings",
+        "apparel"
       ],
       "settings": {
-        "title": "<strong>Shop by Category</strong>",
+        "full_width": false,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "enable_mobile_autorotate": false,
+        "change_mobile_slides_speed": 5,
+        "subheading": "SHOP BY CATEGORY",
+        "title": "Find Your Setup",
         "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "secondary",
+        "collection_style": "standard",
         "image_ratio": "square",
-        "columns_desktop": 2,
-        "color_scheme": "background-1",
+        "enable_badge": true,
+        "text_alignment": "center",
         "show_view_all": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "show_view_all_link": "/collections/all"
+      }
+    },
+    "featured_boards": {
+      "type": "featured-collection",
+      "settings": {
+        "full_width": false,
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "enable_desktop_autorotate": false,
+        "change_desktop_slides_speed": 5,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "enable_mobile_autorotate": false,
+        "change_mobile_slides_speed": 5,
+        "subheading": "BEST SELLERS",
+        "title": "Rider Favorites",
+        "heading_size": "h2",
+        "description": "<p>These boards are crushing it on the mountain. See what riders are loving this season.</p>",
+        "show_description": true,
+        "heading_alignment": "center",
+        "collection": "featured-snowboards",
+        "show_view_all": true,
+        "show_view_all_link": "/collections/featured-snowboards",
+        "grid_style": "standard",
+        "color_scheme": "secondary",
+        "image_ratio": "adapt",
+        "show_color_swatch": true,
+        "show_secondary_image": true,
+        "enable_quick_add": true
+      }
+    },
+    "mountain_scrolling": {
+      "type": "auto-scrolling-text",
+      "blocks": {
+        "text1": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "🏔️ MOUNTAIN READY",
+            "title_size": "h2",
+            "link": ""
+          }
+        },
+        "text2": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "❄️ POWDER PROVEN", 
+            "title_size": "h2",
+            "link": ""
+          }
+        },
+        "text3": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "🎿 RIDER APPROVED",
+            "title_size": "h2",
+            "link": ""
+          }
+        }
+      ],
+      "block_order": [
+        "text1",
+        "text2", 
+        "text3"
+      ],
+      "settings": {
+        "full_width": true,
+        "enable_scroll": true,
+        "scrolling_speed": 2
+      }
+    },
+    "riding_styles": {
+      "type": "column-grid",
+      "blocks": {
+        "all_mountain": {
+          "type": "column",
+          "settings": {
+            "title": "All-Mountain",
+            "heading_size": "h4",
+            "text": "<p>Versatile boards that handle everything from groomers to powder with confidence.</p>",
+            "link_label": "Shop All-Mountain",
+            "link": "/collections/all-mountain"
+          }
+        },
+        "freestyle": {
+          "type": "column",
+          "settings": {
+            "title": "Freestyle",
+            "heading_size": "h4", 
+            "text": "<p>Park and pipe boards built for progression, tricks, and creative expression.</p>",
+            "link_label": "Shop Freestyle",
+            "link": "/collections/freestyle"
+          }
+        },
+        "freeride": {
+          "type": "column",
+          "settings": {
+            "title": "Freeride",
+            "heading_size": "h4",
+            "text": "<p>Powder-hungry boards for deep days and backcountry adventures.</p>",
+            "link_label": "Shop Freeride", 
+            "link": "/collections/freeride"
+          }
+        },
+        "splitboard": {
+          "type": "column",
+          "settings": {
+            "title": "Splitboards",
+            "heading_size": "h4",
+            "text": "<p>Backcountry boards that split apart for the uphill and ride down as one.</p>",
+            "link_label": "Shop Splitboards",
+            "link": "/collections/splitboards"
+          }
+        }
+      ],
+      "block_order": [
+        "all_mountain",
+        "freestyle", 
+        "freeride",
+        "splitboard"
+      ],
+      "settings": {
+        "full_width": false,
+        "columns_desktop": 4,
+        "color_scheme": "secondary",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "enable_mobile_autorotate": false,
+        "change_mobile_slides_speed": 5,
+        "subheading": "FIND YOUR STYLE",
+        "title": "What's Your Riding Style?",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "column_with_background": true,
+        "color_scheme_secondary": "gray",
+        "show_image": true,
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center"
+      }
+    },
+    "brand_story": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "subheading": "OUR STORY",
+            "heading": "Born on the Mountain",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're riders first, retailers second. Every board we sell has been tested by our team in the mountains we call home. From first turns to last light, we understand what makes a great day on the mountain.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Story",
+            "button_link": "/pages/about",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "full_width": false,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "secondary",
+        "mobile_content_alignment": "left"
+      }
+    },
+    "rider_reviews": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review1": {
+          "type": "review",
+          "settings": {
+            "title": "Perfect Setup!",
+            "review_star": "5",
+            "description": "<p>This board completely changed my riding. The edge hold is incredible and it floats like a dream in powder. Highly recommend!</p>",
+            "author": "Jake M."
+          }
+        },
+        "review2": {
+          "type": "review", 
+          "settings": {
+            "title": "Game Changer",
+            "review_star": "5",
+            "description": "<p>Finally found my perfect board. The customer service was amazing - they helped me dial in the perfect setup for my riding style.</p>",
+            "author": "Sarah K."
+          }
+        },
+        "review3": {
+          "type": "review",
+          "settings": {
+            "title": "Stoked!",
+            "review_star": "5", 
+            "description": "<p>Fast shipping, great packaging, and the board exceeded expectations. Already planning my next purchase from these guys.</p>",
+            "author": "Mike R."
+          }
+        }
+      ],
+      "block_order": [
+        "review1",
+        "review2", 
+        "review3"
+      ],
+      "settings": {
+        "full_width": false,
+        "reviews_per_row": 3,
+        "color_scheme": "secondary",
+        "enable_desktop_slider": false,
+        "enable_desktop_autorotate": false,
+        "change_desktop_slides_speed": 5,
+        "swipe_on_mobile": true,
+        "enable_mobile_autorotate": false,
+        "change_mobile_slides_speed": 5,
+        "subheading": "WHAT RIDERS SAY",
+        "title": "Stoked Customers",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "title_size": "h4",
+        "content_alignment": "center",
+        "color_scheme_secondary": "secondary"
       }
     }
   },
   "order": [
-    "hero-section",
-    "featured_collection",
-    "f1552b18-6017-4231-810d-74e61da22c37",
-    "38cdf60f-e431-43b5-aac3-7e6215447d67"
+    "hero_slideshow",
+    "season_countdown",
+    "shop_categories", 
+    "featured_boards",
+    "mountain_scrolling",
+    "riding_styles",
+    "brand_story",
+    "rider_reviews"
   ]
 }

@@ -1,0 +1,426 @@
+/* ===================================
+   SNOWBOARD THEME STYLES
+   Custom styling for snowboard brand
+   =================================== */
+
+/* Color Variables - Mountain & Snow Theme */
+:root {
+  /* Mountain Blues */
+  --mountain-deep: #1a365d;
+  --mountain-mid: #2d4a63;
+  --mountain-light: #4a6fa5;
+  --ice-blue: #e6f3ff;
+  
+  /* Snow Whites */
+  --powder-white: #fafbfc;
+  --snow-white: #ffffff;
+  --frost-white: #f1f5f9;
+  
+  /* Energy Orange (Brand Accent) */
+  --energy-orange: #ff6b35;
+  --energy-orange-light: #ff8c5a;
+  --energy-orange-dark: #e55a2b;
+  
+  /* Grays */
+  --slate-dark: #2d3748;
+  --slate-medium: #4a5568;
+  --slate-light: #a0aec0;
+  
+  /* Gradients */
+  --mountain-gradient: linear-gradient(135deg, var(--mountain-deep) 0%, var(--mountain-mid) 50%, var(--mountain-light) 100%);
+  --snow-gradient: linear-gradient(180deg, var(--snow-white) 0%, var(--frost-white) 100%);
+  --powder-gradient: linear-gradient(45deg, var(--ice-blue) 0%, var(--powder-white) 100%);
+}
+
+/* Typography - Adventure Inspired */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+
+.snowboard-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--mountain-deep);
+}
+
+.snowboard-subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mountain-mid);
+  font-size: 0.9rem;
+}
+
+.snowboard-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--slate-medium);
+}
+
+/* Hero Section Enhancements */
+.slideshow .slide__content {
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slideshow h2 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 900 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.slideshow .slide__text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles - Mountain Inspired */
+.btn-snowboard-primary {
+  background: var(--energy-orange);
+  background: linear-gradient(135deg, var(--energy-orange) 0%, var(--energy-orange-dark) 100%);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-snowboard-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  background: var(--energy-orange-light);
+}
+
+.btn-snowboard-primary:active {
+  transform: translateY(0);
+}
+
+.btn-snowboard-secondary {
+  background: transparent;
+  color: var(--mountain-deep);
+  border: 2px solid var(--mountain-deep);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 26px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-snowboard-secondary:hover {
+  background: var(--mountain-deep);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Section Backgrounds */
+.section-mountain {
+  background: var(--mountain-gradient);
+  color: white;
+}
+
+.section-snow {
+  background: var(--snow-gradient);
+  color: var(--slate-dark);
+}
+
+.section-powder {
+  background: var(--powder-gradient);
+  color: var(--slate-medium);
+}
+
+/* Collection Cards Enhancement */
+.collection-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+  background: white;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+.collection-card__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-card__image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.collection-card:hover .collection-card__image::after {
+  opacity: 1;
+}
+
+.collection-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mountain-deep);
+  margin-bottom: 8px;
+}
+
+/* Product Cards - Snowboard Style */
+.product-card-snowboard {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card-snowboard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card-snowboard__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--energy-orange);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.product-card-snowboard__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--mountain-deep);
+  margin-bottom: 6px;
+}
+
+.product-card-snowboard__price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--energy-orange);
+  font-size: 1.1rem;
+}
+
+/* Auto-Scrolling Text Enhancement */
+.scrolling-text {
+  background: var(--mountain-deep);
+  color: white;
+  padding: 20px 0;
+}
+
+.scrolling-text__item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Reviews Section */
+.reviews-snowboard {
+  background: var(--frost-white);
+  padding: 80px 0;
+}
+
+.review-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin-bottom: 24px;
+  border-left: 4px solid var(--energy-orange);
+}
+
+.review-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--mountain-deep);
+  margin-bottom: 8px;
+}
+
+.review-card__text {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--slate-medium);
+  margin-bottom: 16px;
+}
+
+.review-card__author {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--energy-orange);
+  font-size: 0.9rem;
+}
+
+/* Star Rating */
+.stars {
+  color: var(--energy-orange);
+  margin-bottom: 12px;
+}
+
+/* Countdown Timer Enhancement */
+.countdown-timer {
+  background: var(--mountain-gradient);
+  color: white;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.countdown-timer h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.countdown-numbers {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Image with Text Sections */
+.image-with-text-snowboard {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.image-with-text-snowboard .content {
+  padding: 40px;
+}
+
+.image-with-text-snowboard h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: var(--mountain-deep);
+  margin-bottom: 16px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.image-with-text-snowboard .subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--energy-orange);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .snowboard-heading {
+    font-size: 2rem;
+  }
+  
+  .scrolling-text__item {
+    font-size: 1.5rem;
+  }
+  
+  .countdown-numbers {
+    font-size: 2rem;
+  }
+  
+  .image-with-text-snowboard h3 {
+    font-size: 2rem;
+  }
+  
+  .btn-snowboard-primary,
+  .btn-snowboard-secondary {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Utility Classes */
+.text-mountain { color: var(--mountain-deep); }
+.text-energy { color: var(--energy-orange); }
+.text-snow { color: var(--snow-white); }
+.bg-mountain { background: var(--mountain-gradient); }
+.bg-snow { background: var(--snow-gradient); }
+.bg-powder { background: var(--powder-gradient); }
+
+/* Section Spacing */
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-padding-sm {
+  padding: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  
+  .section-padding-sm {
+    padding: 30px 0;
+  }
+}
